@@ -15,13 +15,14 @@ const addAnimal = (animal) => {
   return connection
     .promise()
     .query(
-      'INSERT INTO animals (id_animal, name, species, picture_link, id_association) VALUES (?, ?, ?, ?, ?)',
+      'INSERT INTO animals (id_animal, name, species, picture_link, id_association, description) VALUES (?, ?, ?, ?, ?, ?)',
       [
         animal.id_animal,
         animal.name,
         animal.species,
         animal.picture_link,
         animal.id_association,
+        animal.description,
       ]
     )
     .then(([result]) => {
